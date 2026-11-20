@@ -3,82 +3,223 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Pages Site</title>
+  <title>Room Gen Setup Guide</title>
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-    }
-
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 1.5rem;
+      margin: 0;
+      padding: 32px 18px 64px;
+      background: #111317;
+      color: #dfe4ec;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
     }
 
     main {
-      background-color: var(--card);
-      max-width: 600px;
-      width: 100%;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      max-width: 820px;
+      margin: 0 auto;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      margin: 0 0 6px;
+      font-size: 1.9rem;
+      color: #ffffff;
+    }
+
+    .sub {
+      margin: 0 0 28px;
+      color: #9aa4b2;
+      font-size: 0.98rem;
+    }
+
+    h2 {
+      margin: 34px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #252a34;
+      font-size: 1.25rem;
+      color: #f3f6fa;
+    }
+
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 1rem;
+      color: #7cc4fa;
     }
 
     p {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin: 0 0 12px;
     }
 
-    .links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+    ul, ol {
+      margin: 0 0 14px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    code {
+      background: #1b202b;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.88em;
+      color: #a5d6ff;
+    }
+
+    pre {
+      background: #0b0d11;
+      border: 1px solid #252a34;
+      border-radius: 8px;
+      padding: 14px;
+      overflow-x: auto;
+      margin: 10px 0 16px;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: #e6edf3;
+      font-size: 0.88rem;
+    }
+
+    .lua-kw {
+      color: #ff7b72;
+    }
+
+    .lua-fn {
+      color: #d2a8ff;
+    }
+
+    .lua-str {
+      color: #a5d6ff;
+    }
+
+    .lua-num {
+      color: #79c0ff;
+    }
+
+    .lua-op {
+      color: #9aa4b2;
     }
 
     a {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      background-color: var(--accent);
-      color: #0f172a;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 6px;
-      transition: opacity 0.2s ease;
+      color: #6cb6ff;
     }
 
-    a:hover {
-      opacity: 0.85;
+    .note {
+      background: #181d27;
+      border-left: 3px solid #6cb6ff;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin: 14px 0;
+    }
+
+    .shot {
+      margin: 14px 0 18px;
+      background: #171b24;
+      border: 1px solid #252a34;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .shot figcaption {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #9aa4b2;
     }
   </style>
 </head>
 <body>
   <main>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my site hosted on GitHub Pages. Edit <code>index.html</code> to customize this page.</p>
-    <div class="links">
-      <a href="https://github.com" target="_blank" rel="noopener">GitHub Profile</a>
+    <h1>Room Gen Setup Guide</h1>
+    <p class="sub">How to configure rooms, doors, prefabs, rules, and RoomBase hitboxes.</p>
+
+    <h2>1. Plugin and RoomBase Hitbox</h2>
+    <p>Download the Dev Panel plugin here: <a href="https://create.roblox.com/store/asset/99145970529331/Dev-Panel" target="_blank" rel="noopener">Dev Panel on the Roblox Creator Store</a>.</p>
+    <p>When you open the plugin, you will see an ImGui-style interface. To set up the hitbox:</p>
+    <ol>
+      <li>Open the <strong>Bounding Box</strong> tab.</li>
+      <li>Click on your room model.</li>
+      <li>Set the hitbox name to <code>RoomBase</code>.</li>
+      <li>You can use multiple hitboxes if needed; just scale them properly to fit the room.</li>
+      <li>Set the size offset to <code>-2</code>.</li>
+      <li>Click <strong>Generate</strong> so the hitbox appears.</li>
+    </ol>
+
+    <h2>2. Naming and Attributes</h2>
+    <ul>
+      <li>Standard rooms: Name the model <code>Floor_RoomName</code>.</li>
+      <li>Start rooms: Name the model <code>Floor_StartRoom</code>.</li>
+    </ul>
+    <div class="note">
+      Every room must have its attributes configured. Use the plugin to copy attributes from a template room onto your finished room before inspection and testing.
     </div>
+
+    <h2>3. RoomDoor (Entrances, Exits, and Chunks)</h2>
+    <p>Entrance, exit, and subroom spawns are replaced with <code>RoomDoor</code>.</p>
+
+    <h3>Entrance, Exit, and Reversible Rooms</h3>
+    <ul>
+      <li>Each <code>RoomDoor</code> has <code>Weight_Exit</code> and <code>Weight_Entrance</code> attributes.</li>
+      <li>Set one of those values to <code>9999</code> to make that door act as the corresponding Exit or Entrance.</li>
+      <li>For reversible rooms, use that same <code>Weight_Exit</code> and <code>Weight_Entrance</code> setup.</li>
+    </ul>
+
+    <h3>Door Facing Direction</h3>
+    <ul>
+      <li>Exits: Face the <code>RoomDoor</code> outward.</li>
+      <li>Entrances: Face the <code>RoomDoor</code> inward toward the room.</li>
+    </ul>
+
+    <h3>Chunk Rooms and Door Segments</h3>
+    <ul>
+      <li>For chunk rooms, use one <code>RoomDoor</code> for the entrance and use the remaining doors for subrooms.</li>
+      <li>Name the exit <code>Half</code> and have half of it facing outward (see the reference image below).</li>
+      <li>Set <code>Chunk_Amount</code> to an even number to avoid incomplete chunks.</li>
+    </ul>
+
+    <figure class="shot">
+      <img src="image_14d7a9.jpg" alt="Room door and bounding box setup" />
+      <figcaption>Reference for room bounds and outward/exit door orientation.</figcaption>
+    </figure>
+
+    <h2>4. Prefabs</h2>
+    <ul>
+      <li>Place items such as hiding lockers inside a folder named <code>Assets</code> inside the room.</li>
+      <li>Name the prefab <code>Prefab</code>.</li>
+      <li>Add an attribute specifying which object should spawn there.</li>
+    </ul>
+
+    <h2>5. Start Rooms, Subrooms, and Dark Rooms</h2>
+
+    <h3>Random Start Room</h3>
+    <p>Include multiple start rooms and configure your style rules like this:</p>
+    <pre><code><span class="lua-kw">return</span> {
+    styleRules <span class="lua-op">=</span> {
+        {min <span class="lua-op">=</span> math.<span class="lua-fn">random</span>(<span class="lua-num">10</span>, <span class="lua-num">15</span>), max <span class="lua-op">=</span> math.<span class="lua-fn">random</span>(<span class="lua-num">20</span>, <span class="lua-num">30</span>), style <span class="lua-op">=</span> <span class="lua-str">"TEST"</span>},
+    }
+}</code></pre>
+
+    <h3>Subroom</h3>
+    <p>Subroom spawning is already handled in the room generator.</p>
+
+    <h3>Dark Room</h3>
+    <ul>
+      <li>Room effects (such as breaking lights) are handled in <code>game/ServerScriptService/CoreModules/RoomGen/Modules/RoomEffects</code>.</li>
+      <li>Whether a floor allows specific room effects is controlled in <code>game/ServerScriptService/CoreModules/RoomGen/Values/"FloorName"/Setup</code>.</li>
+    </ul>
   </main>
 </body>
 </html>
