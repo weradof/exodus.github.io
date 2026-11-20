@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My GitHub Pages Site</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+
+    main {
+      background-color: var(--card);
+      max-width: 600px;
+      width: 100%;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--accent);
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: opacity 0.2s ease;
+    }
+
+    a:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hello, World!</h1>
+    <p>Welcome to my site hosted on GitHub Pages. Edit <code>index.html</code> to customize this page.</p>
+    <div class="links">
+      <a href="https://github.com" target="_blank" rel="noopener">GitHub Profile</a>
+    </div>
+  </main>
+</body>
+</html>
